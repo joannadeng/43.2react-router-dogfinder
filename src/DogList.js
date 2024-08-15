@@ -8,8 +8,8 @@ function DogList({dogsList}) {
         <div>
            <h1>Home Page</h1>
            <nav>
-            {names.map (name => 
-                (<Link to={`/dogs/${name}`}>{name}  </Link>) // how to pass name var to Link path ?
+            {names.map ((name, idx) => 
+                (<Link to={`/dogs/${name}`} key={idx}>{name}  </Link>) // how to pass name var to Link path ?
             )}
 
             {/* <Link to="/dogs/Whiskey">Whiskey  </Link>

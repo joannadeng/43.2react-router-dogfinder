@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 
 function DogDetails({dogsList}) {
     const params = useParams();
-    const dog = dogsList.find(d =>( d.name.toLowerCase() === params.name.toLowerCase()))
+    const dog = dogsList.find((d) =>( d.name.toLowerCase() === params.name.toLowerCase()))
     return(
         <div>
             <h3>Here is the dog you are looking for:</h3>
@@ -12,7 +12,7 @@ function DogDetails({dogsList}) {
                 <li>src:{dog.src}</li>
                 <li>fact:
                     <ul>
-                        {(dog.facts).map(fact => <li>{fact}</li>)}
+                        {(dog.facts).map((fact, idx) => <li key = {idx}>{fact}</li>)}
                     </ul>
                 </li>
             </ul>
