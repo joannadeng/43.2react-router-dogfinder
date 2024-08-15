@@ -2,8 +2,7 @@ import { useParams } from "react-router-dom";
 
 function DogDetails({dogsList}) {
     const params = useParams();
-    const dogs = dogsList.dogs
-    const dog = dogs.find(d =>( d.name.toLowerCase() === params.name.toLowerCase()))
+    const dog = dogsList.find(d =>( d.name.toLowerCase() === params.name.toLowerCase()))
     return(
         <div>
             <h3>Here is the dog you are looking for:</h3>
@@ -17,6 +16,7 @@ function DogDetails({dogsList}) {
                     </ul>
                 </li>
             </ul>
+            <img src={dog.src} alt="Oops, run out of photo~" />
         </div>
 
     )
